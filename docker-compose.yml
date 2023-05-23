@@ -1,0 +1,62 @@
+version: "3.9"
+
+services:
+  # webアプリケーションのコンテナ
+  app:
+    build:
+      context: .
+      dockerfile: ./infra/app/Dockerfile
+      target: php82
+    volumes:
+      - ./src:/var/www
+    ports:
+      - "5173:5173"
+    working_dir: /var/www
+
+  # webサーバーのコンテナ
+  web:
+    build:
+      context: .
+      dockerfile: ./infra/web/Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - app
+    volumes:
+      - ./src:/var/www
+
+  # dbサーバーのコンテナ (PostgreSQL)
+  db:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: laravel
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      TZ: 'Asia/Tokyo'
+    volumes:
+      - db-pgsql-volume:/var/lib/postgresql/data
+
+  # Mailhogのコンテナ
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - "1025:1025"  # smtp server
+      - "8025:8025"  # web ui
+
+  # MinIOのコンテナ
+  minio:
+    image: minio/minio
+    volumes:
+      - minio-volume:/data
+    ports:
+      - "9000:9000"
+    command: server /data
+    environment:
+      MINIO_ACCESS_KEY: minio
+      MINIO_SECRET_KEY: minio123
+
+volumes:
+  db-pgsql-volume:
+  minio-volume:
