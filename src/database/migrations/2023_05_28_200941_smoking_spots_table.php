@@ -16,8 +16,8 @@ return new class extends Migration
             $table->bigIncrements('smoking_spot_id');
             $table->string('name', 50)->comment('喫煙所名');
             $table->text('description')->comment('喫煙所の詳細情報');
-            $table->decimal('latitude', 3, 6)->comment('緯度'); 
-            $table->decimal('longitude', 3, 6)->comment('経度');
+            $table->decimal('latitude', 8, 6)->comment('緯度'); 
+            $table->decimal('longitude', 9, 6)->comment('経度');
             $table->boolean('roofed')->comment('屋根の有無');
             $table->string('hours', 100)->comment('営業時間');
             $table->boolean('has_bench')->comment('ベンチの有無');
