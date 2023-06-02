@@ -12,10 +12,10 @@ class SmokingSpot extends Model
     /**　喫煙所テーブル @var string $table テーブル名 */
     protected $table = 'smoking_spots';
 
-    /**　喫煙所主キー @var string $table 主キー */
+    /**　喫煙所主キー @var string $primaryKey 主キー */
     protected $primaryKey = 'smoking_spot_id';
 
-    /** 代入可能な属性 @var string $fillable  */
+    /** 代入可能な属性 @var array $fillable  */
     protected $fillable = [
         'name',
         'description',
