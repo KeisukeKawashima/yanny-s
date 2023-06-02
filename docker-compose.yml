@@ -38,6 +38,17 @@ services:
     volumes:
       - db-pgsql-volume:/var/lib/postgresql/data
 
+  # pgAdmin4のコンテナ
+  pgadmin:
+    image: dpage/pgadmin4
+    ports:
+      - "8080:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ktex62@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: supersecret
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+
   # Mailhogのコンテナ
   mailhog:
     image: mailhog/mailhog
@@ -60,3 +71,4 @@ services:
 volumes:
   db-pgsql-volume:
   minio-volume:
+  pgadmin-data:
