@@ -3,7 +3,8 @@ declare(strict_types=1);
 
 namespace App\Domain\Models\SmokingSpot\Entity;
 
-
+use App\Domain\Models\SmokingSpot\ValueObjects\SmokingSpotId;
+use App\Domain\Models\SmokingSpot\ValueObjects\SmokingSpotName;
 
 class SmokingSpot {
     /** @var SmokingSpotId 喫煙所ID */
