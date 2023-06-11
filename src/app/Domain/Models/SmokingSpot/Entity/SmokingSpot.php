@@ -6,6 +6,7 @@ namespace App\Domain\Models\SmokingSpot\Entity;
 use App\Domain\Models\SmokingSpot\ValueObjects\Location;
 use App\Domain\Models\SmokingSpot\ValueObjects\SmokingSpotId;
 use App\Domain\Models\SmokingSpot\ValueObjects\SmokingSpotName;
+use App\Domain\Models\SmokingSpot\ValueObjects\SmokingSpotType;
 
 class SmokingSpot {
     /** @var SmokingSpotId 喫煙所ID */
@@ -46,7 +47,7 @@ class SmokingSpot {
         SmokingSpotId $id,
         SmokingSpotName $name,
         Location $location,
-        ?SmokingSpotDescription $description,
+        ?string $description,
         bool $roofed,
         ?OpeningHours $hours,
         bool $hasBench,
