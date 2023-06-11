@@ -8,6 +8,7 @@ use App\Domain\Models\SmokingSpot\ValueObjects\SmokingSpotId;
 use App\Domain\Models\SmokingSpot\ValueObjects\SmokingSpotName;
 use App\Domain\Models\SmokingSpot\ValueObjects\SmokingSpotType;
 
+
 class SmokingSpot {
     /** @var SmokingSpotId 喫煙所ID */
     private $id;
@@ -22,11 +23,12 @@ class SmokingSpot {
     private $description;
 
     /** @var bool 屋根の有無 */
+
     private $roofed;
 
     /** @var OpeningHours 喫煙所の営業時間 */
     private $hours;
-
+  
     /** @var bool ベンチの有無 */
     private $hasBench;
 
