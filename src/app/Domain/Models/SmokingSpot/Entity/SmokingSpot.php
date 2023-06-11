@@ -20,22 +20,22 @@ class SmokingSpot {
     /** @var SmokingSpotDescription 喫煙所の詳細情報 */
     private $description;
 
-    /** @var Roofed 屋根の有無 */
+    /** @var bool 屋根の有無 */
     private $roofed;
 
     /** @var OpeningHours 喫煙所の営業時間 */
     private $hours;
 
-    /** @var HasBench ベンチの有無 */
+    /** @var bool ベンチの有無 */
     private $hasBench;
 
-    /** @var ElectronicCigaretteAllowed 電子タバコの許可状態 */
+    /** @var bool 電子タバコの許可状態 */
     private $electronicCigaretteAllowed;
 
-    /** @var CigaretteAllowed 紙タバコの許可状態 */
+    /** @var bool 紙タバコの許可状態 */
     private $cigaretteAllowed;
 
-    /** @var Walled 壁の有無 */
+    /** @var bool 壁の有無 */
     private $walled;
 
     /** @var SmokingSpotType 喫煙所の種類 */
@@ -46,13 +46,13 @@ class SmokingSpot {
         SmokingSpotId $id,
         SmokingSpotName $name,
         Location $location,
-        SmokingSpotDescription $description,
-        Roofed $roofed,
-        OpeningHours $hours,
-        HasBench $hasBench,
-        ElectronicCigaretteAllowed $electronicCigaretteAllowed,
-        CigaretteAllowed $cigaretteAllowed,
-        Walled $walled,
+        ?SmokingSpotDescription $description,
+        bool $roofed,
+        ?OpeningHours $hours,
+        bool $hasBench,
+        bool $electronicCigaretteAllowed,
+        bool $cigaretteAllowed,
+        bool $walled,
         SmokingSpotType $type
     ) {
         $this->id = $id;
