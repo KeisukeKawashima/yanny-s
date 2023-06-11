@@ -28,7 +28,7 @@ class SmokingSpot {
 
     /** @var OpeningHours 喫煙所の営業時間 */
     private $hours;
-  
+
     /** @var bool ベンチの有無 */
     private $hasBench;
 
