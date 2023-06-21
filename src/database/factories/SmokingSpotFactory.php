@@ -31,7 +31,6 @@ class SmokingSpotFactory extends Factory
             'latitude' => $this->faker->latitude(-90, 90),
             'longitude' => $this->faker->longitude(-180, 180),
             'roofed' => $this->faker->boolean,
-            'hours' => $this->faker->randomElement(['9:00-18:00', '24 hours']),
             'has_bench' => $this->faker->boolean,
             'electronic_cigarette_allowed' => $this->faker->boolean,
             'cigarette_allowed' => $this->faker->boolean,

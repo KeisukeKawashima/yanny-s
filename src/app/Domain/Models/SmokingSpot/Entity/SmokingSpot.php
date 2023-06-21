@@ -8,8 +8,8 @@ use App\Domain\Models\SmokingSpot\ValueObjects\SmokingSpotId;
 use App\Domain\Models\SmokingSpot\ValueObjects\SmokingSpotName;
 use App\Domain\Models\SmokingSpot\ValueObjects\SmokingSpotType;
 
-
-class SmokingSpot {
+class SmokingSpot
+{
     /** @var SmokingSpotId 喫煙所ID */
     private $id;
 
@@ -19,14 +19,13 @@ class SmokingSpot {
     /** @var Location 喫煙所の位置情報 */
     private $location;
 
-    /** @var SmokingSpotDescription 喫煙所の詳細情報 */
+    /** @var string|null 喫煙所の詳細情報 */
     private $description;
 
     /** @var bool 屋根の有無 */
-
     private $roofed;
 
-    /** @var OpeningHours 喫煙所の営業時間 */
+    /** @var OpeningHours|null 喫煙所の営業時間 */
     private $hours;
 
     /** @var bool ベンチの有無 */
@@ -44,7 +43,6 @@ class SmokingSpot {
     /** @var SmokingSpotType 喫煙所の種類 */
     private $type;
 
-    // constructor
     public function __construct(
         SmokingSpotId $id,
         SmokingSpotName $name,
@@ -71,20 +69,58 @@ class SmokingSpot {
         $this->type = $type;
     }
 
-    // getters
-    public function getId(): SmokingSpotId {
+    public function getId(): SmokingSpotId
+    {
         return $this->id;
     }
 
-    public function getName(): SmokingSpotName {
+    public function getName(): SmokingSpotName
+    {
         return $this->name;
     }
 
-    public function getLocation(): Location {
+    public function getLocation(): Location
+    {
         return $this->location;
     }
 
-    // other getters...
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
 
-    // setters are generally not used in DDD as entities should be valid upon creation and not changed thereafter
+    public function isRoofed(): bool
+    {
+        return $this->roofed;
+    }
+
+    public function getHours(): ?OpeningHours
+    {
+        return $this->hours;
+    }
+
+    public function hasBench(): bool
+    {
+        return $this->hasBench;
+    }
+
+    public function isElectronicCigaretteAllowed(): bool
+    {
+        return $this->electronicCigaretteAllowed;
+    }
+
+    public function isCigaretteAllowed(): bool
+    {
+        return $this->cigaretteAllowed;
+    }
+
+    public function hasWalled(): bool
+    {
+        return $this->walled;
+    }
+
+    public function getType(): SmokingSpotType
+    {
+        return $this->type;
+    }
 }

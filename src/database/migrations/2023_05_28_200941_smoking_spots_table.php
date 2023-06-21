@@ -19,7 +19,6 @@ return new class extends Migration
             $table->decimal('latitude', 8, 6)->comment('緯度'); 
             $table->decimal('longitude', 9, 6)->comment('経度');
             $table->boolean('roofed')->comment('屋根の有無');
-            $table->string('hours', 100)->comment('営業時間');
             $table->boolean('has_bench')->comment('ベンチの有無');
             $table->boolean('electronic_cigarette_allowed')->comment('電子タバコ');
             $table->boolean('cigarette_allowed')->comment('紙タバコ');
