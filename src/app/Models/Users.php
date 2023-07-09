@@ -11,7 +11,7 @@ class Users extends Model
 
     /** ユーザーテーブル　@var string $table テーブル名*/
     protected $table = 'users';
-    
+
     /** ユーザーテーブル主キー　@var string $primaryKey 主キー */
     protected $primaryKey = 'user_id';
 

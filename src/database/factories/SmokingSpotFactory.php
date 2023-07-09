@@ -10,11 +10,10 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class SmokingSpotFactory extends Factory
 {
-
     /**
      * The name of the factory's corresponding model class
-     * 
-     * @var SmokigSpot 
+     *
+     * @var SmokigSpot
      */
     protected $model_class = SmokingSpot::class;
 

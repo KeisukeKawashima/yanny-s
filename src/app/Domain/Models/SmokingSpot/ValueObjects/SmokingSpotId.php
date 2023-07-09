@@ -6,20 +6,20 @@ namespace App\Domain\Models\SmokingSpot\ValueObjects;
 
 use Exception;
 
-class SmokingSpotId {
-
+class SmokingSpotId
+{
     /** @var int $smokingSpotId　喫煙所ID */
     private $smokingSpotId;
 
     /**
      * Constructor
-     * 
-     * @var int $value 
+     *
+     * @var int $value
      * @throws Exception
      */
     public function __construct(int $value)
     {
-        if($value <= 0){
+        if($value <= 0) {
             throw new Exception('IDが正しくありません。');
         }
         $this->smokingSpotId = $value;
@@ -27,10 +27,10 @@ class SmokingSpotId {
 
     /**
      * Get the value of smokingSpotId
-     * 
+     *
      * @return $smokingSpotId 喫煙所ID
      */
-    public function getValue() : int
+    public function getValue(): int
     {
         return $this->smokingSpotId;
     }

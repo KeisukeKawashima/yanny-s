@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Http\Controllers;
@@ -23,7 +24,7 @@ class SmokingSpotController extends Controller
         $type = $request->input('type');
 
         // UseCase層を呼び出して喫煙所を検索
-        $smokingSpots = $this->smokingSpotSearchUseCase->execute($latitude,$longitude,$type);
+        $smokingSpots = $this->smokingSpotSearchUseCase->execute($latitude, $longitude, $type);
 
         // 検索結果をレスポンスとして返す
         return response()->json($smokingSpots);

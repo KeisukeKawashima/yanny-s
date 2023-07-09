@@ -6,7 +6,7 @@ namespace App\Domain\Models\SmokingSpot\ValueObjects;
 
 /**
  *  SmokingSpotType Value Object
- *  
+ *
  *  このクラスは喫煙所の種類を表します。種類は以下のいずれかになります：
  * - 'outdoor': 喫煙所は屋外にあります。
  * - 'indoor': 喫煙所は屋内にあります。
@@ -35,11 +35,12 @@ class SmokingSpotType
      * @param string $value 喫煙所の種類。'outdoor'、'indoor'、'cafe'、'restaurant'、'general_smoking_area'のいずれかでなければなりません。
      * @throws \InvalidArgumentException $valueが有効な種類でない場合に投げられます。
      */
-    public function __construct(string $value) {
+    public function __construct(string $value)
+    {
         if ($value === null || !in_array($value, self::VALID_TYPES, true)) {
             throw new \InvalidArgumentException(sprintf('Invalid smoking spot type: %s', $value));
         }
-    
+
         $this->value = $value;
     }
 
@@ -48,13 +49,14 @@ class SmokingSpotType
      *
      * @return string 喫煙所の種類
      */
-    public function getValue(): string {
+    public function getValue(): string
+    {
         return $this->value;
     }
 
     /**
      * Checks whether this type is equal to another type
-     * 
+     *
      * @param SmokingSpotType $other The other type to compare with
      * @return bool True if the types are equal, false otherwise
      */

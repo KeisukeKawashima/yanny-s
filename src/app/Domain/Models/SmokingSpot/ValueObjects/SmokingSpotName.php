@@ -7,8 +7,8 @@ namespace App\Domain\Models\SmokingSpot\ValueObjects;
 use Exception;
 use InvalidArgumentException;
 
-class SmokingSpotName {
-
+class SmokingSpotName
+{
     /** @const  */
     private const VARCHAR_LENGTH = 50;
 
@@ -17,17 +17,17 @@ class SmokingSpotName {
 
     /**
      * Constructor
-     * 
-     * @var int $value 
+     *
+     * @var int $value
      * @throws Exception
      */
     public function __construct(string $value)
     {
-        if($value){
+        if($value) {
             throw new InvalidArgumentException('が正しくありません。');
         }
 
-        if(mb_strlen($value) < self::VARCHAR_LENGTH ){
+        if(mb_strlen($value) < self::VARCHAR_LENGTH) {
             throw new InvalidArgumentException('喫煙所名は50文字以内である必要があります。');
         }
         $this->smokingSpotName = $value;
@@ -35,10 +35,10 @@ class SmokingSpotName {
 
     /**
      * Get the value of smokingSpotName
-     * 
+     *
      * @return string $smokingSpotName 喫煙所名
      */
-    public function getValue() : string
+    public function getValue(): string
     {
         return $this->smokingSpotName;
     }

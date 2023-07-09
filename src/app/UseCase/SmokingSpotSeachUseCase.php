@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\UseCase;
@@ -19,7 +20,7 @@ class SmokingSpotSearchUseCase
 
     public function execute(int $latitude, int $longitude, string $type): array
     {
-        $locationValueObject = new Location($latitude,$longitude);
+        $locationValueObject = new Location($latitude, $longitude);
         $typeValueObject = new SmokingSpotType($type);
 
         // サービス層を呼び出して喫煙所を検索

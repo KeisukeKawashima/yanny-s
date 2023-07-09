@@ -48,7 +48,7 @@ class SmokingSpotControllerTest extends TestCase
         $this->assertSame(200, $response->getStatusCode());
     }
 
-    protected function tearDown() : void
+    protected function tearDown(): void
     {
         Mockery::close();
     }
