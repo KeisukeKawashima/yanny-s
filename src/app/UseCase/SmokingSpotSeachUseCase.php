@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Application\UseCases;
+namespace App\UseCase;
 
 use App\Domain\Models\SmokingSpot\Entity\SmokingSpot;
 use App\Domain\Models\SmokingSpot\ValueObjects\Location;

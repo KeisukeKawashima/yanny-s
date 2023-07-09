@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
-use App\Application\UseCases\SmokingSpotSearchUseCase;
+use App\UseCase\SmokingSpotSearchUseCase;
 use Illuminate\Http\Request;
 
 class SmokingSpotController extends Controller
